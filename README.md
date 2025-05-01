@@ -70,7 +70,7 @@ Use the issue code with a prefix:
 ## ✅ TODO
 
 ### 🧹 Chores
-- [ ] CHO-001: Update README with branch and TODO conventions (#1)
+- [X] CHO-001: Update README with branch and TODO conventions (#1)
 
 ### 🔧 Infrastructure
 - [ ] INF-001: Add `.env.development` file to manage environment variables (#2)
