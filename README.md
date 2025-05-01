@@ -57,7 +57,7 @@ Each TODO task must begin with a prefix indicating the domain it belongs to, fol
 1. Create an issue titled exactly as your TODO item.
 2. Reference the issue number in your TODO list:  
    `- [ ] CHO-001: Update README with branch and TODO conventions (#1)`
-3. When creating a Pull Request, add `Closes #1` in the description.
+3. When creating a Pull Request, add `Closes #1` in the **PR description** (not just in commits).
 
 ### 🌿 How to name branches from issues:
 Use the issue code with a prefix:
@@ -67,10 +67,77 @@ Use the issue code with a prefix:
 
 ---
 
+## 🔖 Release Strategy
+
+### 🗂 Versioning Standard: [SemVer.org](https://semver.org/)
+We use semantic versioning to track releases:
+
+```
+MAJOR.MINOR.PATCH
+```
+
+| Version    | When to use                                              |
+|------------|----------------------------------------------------------|
+| `0.1.0`    | First pre-release (only boilerplate, no business logic)  |
+| `0.2.0`    | Minor changes (structure, docs, setup, test infra)       |
+| `1.0.0`    | First stable release with complete core features         |
+| `1.1.0`    | Minor features added                                     |
+| `1.1.1`    | Patch for bug fixes, no new features                     |
+
+### 🛠 How to Create a Release (Gitflow Style)
+
+> Releases are only made from `main`. Always create a release branch first.
+
+#### 📌 Step-by-step:
+
+```bash
+# 1. From develop branch
+git checkout develop
+
+# 2. Create a release branch
+git checkout -b release/v0.1.0
+
+# 3. Finalize changes (e.g., version bump, docs)
+git commit -am "Prepare v0.1.0 release: documentation and structure"
+git push origin release/v0.1.0
+```
+
+#### ✅ Then:
+- Open a Pull Request from `release/v0.1.0` → `main`
+- Add `Closes #X` for related issues in the **PR description**
+- After merge, **checkout main and tag the release**:
+
+```bash
+git checkout main
+git pull origin main
+git tag -a v0.1.0 -m "Initial pre-release with structure and documentation"
+git push origin v0.1.0
+```
+
+#### 🚀 Create the GitHub Release
+
+```bash
+gh release create v0.1.0 --title "v0.1.0 – Initial Pre-release" --generate-notes --prerelease
+```
+
+> ✅ Use `--generate-notes` to automatically pull commit messages and PR titles
+> ✅ Use `--prerelease` if the version is not production-ready
+
+#### 🔁 Finally, merge release back into develop:
+
+```bash
+git checkout develop
+git pull origin develop
+git merge main
+git push origin develop
+```
+
+---
+
 ## ✅ TODO
 
 ### 🧹 Chores
-- [X] CHO-001: Update README with branch and TODO conventions (#1)
+- [x] CHO-001: Update README with branch and TODO conventions (#1)
 
 ### 🔧 Infrastructure
 - [ ] INF-001: Add `.env.development` file to manage environment variables (#2)
@@ -230,7 +297,7 @@ Please follow the Gitflow workflow, write clean and tested code, and open Pull R
 
 ## 📜 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE.txt).
 
 ---
 
