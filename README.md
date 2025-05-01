@@ -4,6 +4,10 @@ This project is designed to help individuals maintain the health of their person
 
 ---
 
+## 🧾 Current version: v0.1.0 (Pre-release)
+
+---
+
 ## 🚀 Features
 
 - ✅ Budget management  
