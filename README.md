@@ -4,7 +4,7 @@ This project is designed to help individuals maintain the health of their person
 
 ---
 
-## 🧾 Current version: v0.1.0 (Pre-release)
+## 🧾 Current version: v0.3.0 (Pre-release)
 
 ---
 
@@ -137,14 +137,14 @@ git push origin develop
 ## ✅ TODO
 
 ### 🧹 Chores
-- [x] CHO-001: Update README with branch and TODO conventions (#1)
+- [X] CHO-001: Update README with branch and TODO conventions (#1)
 
 ### 🔧 Infrastructure
-- [ ] INF-001: Add `.env.development` file to manage environment variables (#2)
-- [ ] INF-002: Add volume for persistent PostgreSQL data (#3)
-- [ ] INF-003: Create Dockerfile for the ASP.NET Core MVC application (#4)
-- [ ] INF-004: Create `docker-compose.yml` to orchestrate the app + database + pgAdmin (#5)
-- [ ] INF-005: Isolate the PostgreSQL container (only accessible by app + pgAdmin) (#6)
+- [X] INF-001: Add `.env.development` file to manage environment variables (#2)
+- [X] INF-002: Add volume for persistent PostgreSQL data (#3)
+- [X] INF-003: Create Dockerfile for the ASP.NET Core MVC application (#4)
+- [X] INF-004: Create `docker-compose.yml` to orchestrate the app + database + pgAdmin (#5)
+- [X] INF-005: Isolate the PostgreSQL container (only accessible by app + pgAdmin) (#6)
 
 ### 🧱 Backend
 - [ ] BCK-001: Define the project structure (MVC + Services + Persistence) (#7)
